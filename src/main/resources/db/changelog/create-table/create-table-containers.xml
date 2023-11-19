@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+>
+    <changeSet id="create-table-container" author="s">
+        <preConditions>
+            <not>
+                <tableExists tableName="container"/>
+            </not>
+        </preConditions>
+
+        <createTable tableName="container">
+            <column name="id" type="UUID" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="filename" type="VARCHAR">
+            </column>
+            <column name="filepath" type="VARCHAR">
+            </column>
+            <column name="filesize" type="BIGINT">
+            </column>
+            <column name="mediatype" type="VARCHAR">
+            </column>
+            <column name="data" type="VARCHAR">
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
